@@ -1,0 +1,119 @@
+.promo {
+  background-color: #f3c1f8;
+  height: 634px;
+  display: flex;
+  flex-direction: column;
+}
+
+.promo__top {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 18px;
+}
+
+.promo__logo {
+  height: 38px;
+  width: 38px;
+  background-image: url("../../../images/logo.svg");
+}
+
+.promo__enterblock {
+  display: flex;
+}
+
+.promo__reg {
+  /* width: 76px; */
+  height: 32px;
+  background-color: transparent;
+  color: black;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+
+  margin-right: 30px;
+}
+
+.promo__enter {
+  width: 76px;
+  height: 32px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.promo__caption {
+  margin: 0;
+  padding: 0;
+  padding-top: 67px;
+  padding-left: 82px;
+  font-family: Inter;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: -0.04em;
+  text-align: left;
+
+  height: 104px;
+  max-width: 626px;
+}
+
+.promo__picture {
+  height: 244.00001525878906px;
+  width: 721.9999389648438px;
+  margin-left: 38%;
+  margin-top: 85px;
+  border-radius: 0px;
+  background-image: url("../../../images/landingIMG.svg");
+}
+
+@media screen and (max-width: 767px) {
+  .promo {
+    height: fit-content;
+  }
+
+  .promo__caption {
+    padding: 0;
+    padding-left: 10px;
+    margin-top: 183px;
+    font-size: 31px;
+    font-weight: 400;
+    line-height: 39px;
+    letter-spacing: -0.04em;
+    text-align: center;
+
+    height: 117px;
+    max-width: 300px;
+  }
+
+  .promo__picture {
+    height: 320px;
+    width: 320px;
+    margin-left: 0;
+    margin-top: 60px;
+    border-radius: 0px;
+    background-image: url("../../../images/landingIMG.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .promo__top {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 18px;
+  }
+
+  .promo__reg {
+    font-size: 10px;
+  }
+
+  .promo__enter {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,9 @@
+.saved-movies-elements {
+  padding: 70px;
+  padding-bottom: 58px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-height: 1104px;
+  grid-column-gap: 30px;
+  grid-row-gap: 60px;
+}

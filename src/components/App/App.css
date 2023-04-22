@@ -1,0 +1,27 @@
+/* .page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  font-family: "Inter"
+  , "Arial", "Helvetica", sans-serif;
+} */
+
+.page {
+  position: relative;
+  margin: 0px auto;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  max-width: 1280px;
+}
+
+@media screen and (max-width: 768px) {
+  .page {
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .page {
+    max-width: 320px;
+  }
+}

@@ -1,0 +1,75 @@
+.header {
+  height: 74px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 70px;
+  padding-top: 18px;
+  padding-right: 70px;
+  align-items: center;
+}
+
+.header__logo {
+  height: 38px;
+  width: 38px;
+  background-image: url(../../images/logo.svg);
+}
+
+.header__films {
+  display: flex;
+}
+
+.header__films-list {
+  margin: 0;
+  padding: 0;
+}
+.header__savedfilms-list {
+  margin: 0;
+  padding: 0;
+  margin-left: 17px;
+}
+
+.header__account {
+  display: flex;
+  height: 30px;
+  align-items: center;
+}
+
+.header__account_name {
+  margin: 0;
+  padding: 0;
+  margin-right: 17px;
+}
+
+.header__account_pic {
+  background-image: url(../../images/icon__COLOR_icon-main.svg);
+  height: 30px;
+  width: 26px;
+  background-size: cover;
+}
+
+.burger-menu {
+  background-image: url(../../images/menu.svg);
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .burger-menu {
+    display: block;
+    background-position: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__films {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__account {
+    display: none;
+  }
+}
