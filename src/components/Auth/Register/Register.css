@@ -63,7 +63,7 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  max-width: 358px;
+  width: 358px;
   max-height: 27px;
   padding: 0px;
 }
@@ -98,7 +98,7 @@
     width: 81.25%;
   }
   .registration__input {
-    max-width: 260px;
+    width: 260px;
     max-height: 27px;
   }
 }

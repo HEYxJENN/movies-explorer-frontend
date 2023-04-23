@@ -23,10 +23,21 @@ function App() {
 
   const [loggedIn, setLoggedIn] = useState(false);
   const [isBurgerOpened, setBurgerOpened] = useState(false);
+  const [isInputLocked, setInputLocked] = useState(true);
 
   const handleBurgerMenuClick = () => {
     setBurgerOpened(!isBurgerOpened);
     console.log(isBurgerOpened);
+  };
+
+  const handleEditClick = () => {
+    setInputLocked(!isInputLocked);
+    console.log(isInputLocked);
+  };
+
+  const handleExitClick = () => {
+    localStorage.clear();
+    history.push("/signin");
   };
 
   return (
@@ -40,7 +51,12 @@ function App() {
               </Route>
 
               <Route path="/profile">
-                <Profile onBurger={handleBurgerMenuClick} />
+                <Profile
+                  onBurger={handleBurgerMenuClick}
+                  onEdit={handleEditClick}
+                  onExit={handleExitClick}
+                  isLocked={isInputLocked}
+                />
               </Route>
 
               <Route path="/signin">

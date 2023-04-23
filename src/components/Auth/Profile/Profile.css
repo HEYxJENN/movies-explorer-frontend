@@ -37,6 +37,7 @@
   text-align: left;
   margin: 0px;
   padding: 0;
+  border: none;
 }
 
 .registration__already {
@@ -51,4 +52,17 @@
 }
 .registration__already:last-child {
   margin-top: 17px;
+  color: red;
+}
+
+@media screen and (max-width: 769px) {
+  .profile {
+    width: 51%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .profile {
+    width: 81.25%;
+  }
 }

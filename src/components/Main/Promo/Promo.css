@@ -73,6 +73,19 @@
   background-image: url("../../../images/landingIMG.svg");
 }
 
+@media screen and (max-width: 1279px) {
+  .promo__picture {
+    width: 680px;
+    padding: 44px;
+    margin-left: 0;
+    margin-top: 60px;
+    border-radius: 0px;
+    background-image: url("../../../images/landingIMG.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .promo {
     height: fit-content;

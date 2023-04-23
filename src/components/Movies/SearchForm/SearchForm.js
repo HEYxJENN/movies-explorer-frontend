@@ -2,6 +2,11 @@ import React from "react";
 
 import "./SearchForm.css";
 
+const onSwitcher = () => {
+  const switcherEl = document.querySelector(".switcher");
+  switcherEl.style.backgroundImage = "url(../../../images/exit.svg);";
+};
+
 function SearchForm(props) {
   return (
     <section>
@@ -10,16 +15,10 @@ function SearchForm(props) {
           <input className="serch-input" placeholder="Фильм" />
 
           <div className="search-form-sign" />
-          <button
-            // onClick={props.Find}
-            className="find-button"
-          />
+          <button type="submit" className="find-button" />
         </form>
         <div className="short-switcher">
-          <button
-            // onClick={props.Switcher}
-            className="switcher"
-          >
+          <button className="switcher" onClick={onSwitcher}>
             {" "}
           </button>
           <p>Короткометражки</p>

@@ -12,7 +12,7 @@ function Movies(props) {
   return (
     <div>
       <Header onBurger={props.onBurger} />
-      <SearchForm />
+      <SearchForm onSwitcher={props.onSwitcher} />
       <section>
         {/* <ul className="movies-elements"> */}
         <MoviesCardList />

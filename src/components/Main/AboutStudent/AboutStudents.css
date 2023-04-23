@@ -118,6 +118,12 @@
   border-bottom: none;
 }
 
+@media screen and (max-width: 1279px) {
+  .about-student__middle-block-text {
+    max-width: 364px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .about-student {
     height: fit-content;

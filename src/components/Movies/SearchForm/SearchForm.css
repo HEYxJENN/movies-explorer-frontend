@@ -69,6 +69,8 @@
   background-repeat: no-repeat;
   border: none;
   background-color: transparent;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 @media screen and (max-width: 420px) {

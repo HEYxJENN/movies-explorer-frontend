@@ -63,8 +63,8 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  min-width: 358px;
-  min-height: 27px;
+  width: 358px;
+  max-height: 27px;
   padding: 0px;
 }
 
@@ -91,6 +91,9 @@
   .registration {
     width: 51%;
   }
+  .registration__input {
+    width: 390px;
+  }
 }
 
 @media screen and (max-width: 420px) {
@@ -98,7 +101,7 @@
     width: 81.25%;
   }
   .registration__input {
-    max-width: 260px;
-    max-height: 27px;
+    width: 260px;
+    height: 27px;
   }
 }

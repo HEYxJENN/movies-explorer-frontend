@@ -14,10 +14,10 @@
   position: relative;
   left: 270px;
   top: 30px;
-  size: 10px;
+  font-size: 10px;
 }
 
-.movie__image:hover + .movie-save {
+.movie:hover .movie-save {
   visibility: visible;
 }
 
@@ -70,8 +70,8 @@
     height: 21px;
     color: black;
     position: relative;
-    left: 200px;
+    left: 210px;
     top: 30px;
-    size: 10px;
+    font-size: 10px;
   }
 }
