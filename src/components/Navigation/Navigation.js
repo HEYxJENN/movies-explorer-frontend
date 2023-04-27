@@ -12,8 +12,8 @@ function BurgerMenu(props) {
         <a className="burger-element">Сохраненные Фильмы</a>
 
         <div className="burger-account">
-          <a className="header__account_name">Аккаунт</a>
-          <div className="header__account_pic"></div>
+          <a className="header__account-name">Аккаунт</a>
+          <div className="header__account-pic"></div>
         </div>
       </div>
     </div>

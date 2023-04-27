@@ -9,10 +9,14 @@ function Promo() {
 
         <div className="promo__enterblock">
           <button className="promo__reg">
-            <a href="/signup">Регистрация</a>
+            <a className="promo__reg_visited" href="/signup">
+              Регистрация
+            </a>
           </button>
           <button className="promo__enter">
-            <a href="/signin">Войти</a>
+            <a className="promo__enter_visited" href="/signin">
+              Войти
+            </a>
           </button>
         </div>
       </div>

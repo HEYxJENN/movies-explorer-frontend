@@ -6,7 +6,7 @@ import img from "../../../images/Greatest.webp";
 function Movie(props) {
   return (
     <li className="movie">
-      <button className="movie-save">Сохранить</button>
+      <button className="movie__save">Сохранить</button>
       <img className="movie__image" src={img} alt="alt" />
       <div className="movie__info">
         <p className="movie__name">Название</p>

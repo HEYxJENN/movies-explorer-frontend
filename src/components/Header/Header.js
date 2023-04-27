@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.css";
 
 function Header(props) {
+  // if (props.isHeaderVisible === true)
   return (
     <header className="header">
       <a href="/" title="Перейти на главную" className="header__logo" />
@@ -15,13 +16,13 @@ function Header(props) {
         </a>
       </div>
       <div className="header__account">
-        <a href="/profile" className="header__account_name">
+        <a href="/profile" className="header__account-name">
           Аккаунт
         </a>
         <a
           href="/profile"
           title="Перейти в профиль"
-          className="header__account_pic"
+          className="header__account-pic"
         />
       </div>
       <div onClick={props.onBurger} className="burger-menu" />

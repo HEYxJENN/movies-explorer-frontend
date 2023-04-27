@@ -41,6 +41,8 @@
   background-color: black;
   color: white;
   height: 45px;
+  border: none;
+  border-radius: 3px;
 }
 
 .registration__input-header {
@@ -93,7 +95,7 @@
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 500px) {
   .registration {
     width: 81.25%;
   }

@@ -44,9 +44,9 @@ function Login(props) {
           <h3 className="registration__already">
             {" "}
             Еще не зарегистрированы?{" "}
-            <span className="registration__already_black">
-              <a href="/signup">Зарегистрироваться</a>
-            </span>
+            <a className="registration__already_black" href="/signup">
+              Зарегистрироваться
+            </a>
           </h3>
         </fieldset>
       </form>

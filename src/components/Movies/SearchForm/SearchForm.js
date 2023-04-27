@@ -11,20 +11,20 @@ function SearchForm(props) {
   return (
     <section>
       <div className="search-block">
-        <form className="search-form" placeholder="Фильм">
-          <input className="serch-input" placeholder="Фильм" />
+        <form className="search-block__form" placeholder="Фильм">
+          <input className="search-block__input" placeholder="Фильм" required />
 
-          <div className="search-form-sign" />
-          <button type="submit" className="find-button" />
+          <div className="search-block__form-sign" />
+          <button type="submit" className="search-block__find-button" />
         </form>
-        <div className="short-switcher">
-          <button className="switcher" onClick={onSwitcher}>
+        <div className="search-block__short-switcher">
+          <button className="search-block__switcher" onClick={onSwitcher}>
             {" "}
           </button>
           <p>Короткометражки</p>
         </div>
       </div>
-      <div className="line" />
+      <div className="search-block__line" />
     </section>
   );
 }

@@ -29,10 +29,16 @@ function Profile(props) {
           ></input>
         </div>
 
-        <h3 className="registration__already" onClick={props.onEdit}>
+        <h3
+          className="registration__already registration__already_black"
+          onClick={props.onEdit}
+        >
           Редактировать
         </h3>
-        <h3 className="registration__already" onClick={props.onExit}>
+        <h3
+          className="registration__already registration__already_exit-red "
+          onClick={props.onExit}
+        >
           Выйти из аккаунта
         </h3>
       </div>

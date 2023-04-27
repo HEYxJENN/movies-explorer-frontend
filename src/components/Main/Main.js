@@ -8,13 +8,13 @@ import Footer from "../Footer/Footer";
 
 function Main() {
   return (
-    <main className="main">
+    <section className="main">
       <Promo />
       <AboutProject />
       <Tech />
       <AboutStudent />
       <Footer />
-    </main>
+    </section>
   );
 }
 

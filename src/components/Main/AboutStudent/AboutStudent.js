@@ -27,17 +27,30 @@ function AboutStudents() {
         />
       </div>
 
-      <div className="about-student__portfolio">
-        <p className="about-student__portfolio-fill">Портфолио</p>
-        <p className="about-student__portfolio-fill">Статичный сайт</p>
-        <p className="about-student__portfolio-fill">Адаптивный сайт</p>
-        <a
+      <ul className="about-student__portfolio">
+        <li className="about-student__portfolio-fill">Портфолио</li>
+        <li
+          href="https://heyxjenn.github.io/russian-travel/#"
+          className="about-student__portfolio-fill"
+        >
+          Статичный сайт
+          <div className="arrow" />
+        </li>
+        <li
+          href="https://github.com/HEYxJENN/how-to-learn"
+          className="about-student__portfolio-fill"
+        >
+          Адаптивный сайт
+          <div className="arrow" />
+        </li>
+        <li
           href="https://github.com/HEYxJENN/react-mesto-api-full-gha"
           className="about-student__portfolio-fill"
         >
           Одностраничное приложение
-        </a>
-      </div>
+          <div className="arrow" />
+        </li>
+      </ul>
     </div>
   );
 }

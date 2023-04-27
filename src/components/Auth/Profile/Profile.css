@@ -50,7 +50,7 @@
   line-height: 17px;
   letter-spacing: 0em;
 }
-.registration__already:last-child {
+.registration__already_exit-red {
   margin-top: 17px;
   color: red;
 }

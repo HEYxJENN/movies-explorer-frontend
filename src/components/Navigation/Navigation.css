@@ -59,13 +59,13 @@
   justify-content: center;
 }
 
-.header__account_name {
+.header__account-name {
   margin: 0;
   padding: 0;
   margin-right: 17px;
 }
 
-.header__account_pic {
+.header__account-pic {
   background-image: url(../../images/icon__COLOR_icon-main.svg);
   height: 14px;
   width: 11.5px;

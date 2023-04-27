@@ -49,14 +49,14 @@
 
 .footer__gh:visited {
   text-decoration: none;
-  color: inherit;
+  color: black;
 }
 
 .footer__gh:link {
   text-decoration: none;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 500px) {
   .footer {
     padding: 10px;
     display: flex;

@@ -10,7 +10,7 @@ import SearchForm from "../Movies/SearchForm/SearchForm";
 
 function Movies(props) {
   return (
-    <div>
+    <section>
       <Header />
       <SearchForm />
       <section>
@@ -18,9 +18,8 @@ function Movies(props) {
         <SavedMoviesCardList />
         {/* </ul> */}
       </section>
-
       <Footer />
-    </div>
+    </section>
   );
 }
 

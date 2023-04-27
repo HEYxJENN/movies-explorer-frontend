@@ -29,11 +29,18 @@
   background-color: transparent;
   color: black;
   border: none;
-  font-size: 14px;
-  font-weight: bold;
   cursor: pointer;
-
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0px;
   margin-right: 30px;
+}
+
+.promo__reg_visited {
+  color: black;
+  text-decoration: none;
 }
 
 .promo__enter {
@@ -42,10 +49,19 @@
   background-color: black;
   color: white;
   border: none;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: bold;
+  border-radius: 3px;
   cursor: pointer;
+
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0px;
+}
+
+.promo__enter_visited {
+  color: white;
+  text-decoration: none;
 }
 
 .promo__caption {
@@ -114,6 +130,7 @@
     background-image: url("../../../images/landingIMG.svg");
     background-position: center;
     background-repeat: no-repeat;
+    padding: 0;
   }
 
   .promo__top {

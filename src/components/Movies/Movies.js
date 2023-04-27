@@ -10,7 +10,7 @@ import "./Movies.css";
 
 function Movies(props) {
   return (
-    <div>
+    <section>
       <Header onBurger={props.onBurger} />
       <SearchForm onSwitcher={props.onSwitcher} />
       <section>
@@ -21,7 +21,7 @@ function Movies(props) {
       </section>
 
       <Footer />
-    </div>
+    </section>
   );
 }
 
