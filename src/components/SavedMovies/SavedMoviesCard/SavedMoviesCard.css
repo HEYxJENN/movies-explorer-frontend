@@ -1,0 +1,17 @@
+.movie__remove {
+  visibility: hidden;
+  border-radius: 30px;
+  max-width: 21px;
+  min-height: 21px;
+  position: relative;
+  left: 330px;
+  top: 30px;
+  font-size: 10px;
+  border: none;
+  background-image: url(../../../images/remove-card.svg);
+  background-position: center;
+}
+
+.movie:hover .movie__remove {
+  visibility: visible;
+}

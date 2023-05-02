@@ -2,7 +2,6 @@ import React from "react";
 import "./Header.css";
 
 function Header(props) {
-  // if (props.isHeaderVisible === true)
   return (
     <header className="header">
       <a href="/" title="Перейти на главную" className="header__logo" />

@@ -5,7 +5,7 @@ import Movie from "../SavedMoviesCard/SavedMoviesCard.js";
 
 function SavedMoviesCardList(props) {
   return (
-    <ul className="saved-movies-elements">
+    <ul className="movies-elements">
       {/* {cards.map((card) => {
             return  */}
       <Movie />

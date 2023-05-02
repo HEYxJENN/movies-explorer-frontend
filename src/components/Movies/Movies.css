@@ -1,11 +1,16 @@
+.movies-block {
+  text-align: center;
+}
+
 .more-films {
   width: 320px;
   height: 36px;
-  margin-left: 38%;
+  margin: auto;
   border: 0.5px solid #e8e8e8;
   border-radius: 5px;
   background-color: transparent;
-  margin-bottom: 139px;
+  margin-top: 50px;
+  margin-bottom: 80px;
 }
 
 @media screen and (max-width: 420px) {
@@ -14,5 +19,8 @@
     height: 36px;
     margin-top: 50px;
     margin-left: 40px;
+  }
+  .movies-block {
+    padding: 0px;
   }
 }

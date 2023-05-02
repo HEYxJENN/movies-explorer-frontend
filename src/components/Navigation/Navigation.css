@@ -13,7 +13,7 @@
   transition: all 0.6s linear;
 }
 
-.burger-close {
+.burger__close {
   background-image: url(../../images/EXIT.svg);
   width: 22px;
   height: 22px;
@@ -28,7 +28,7 @@
   opacity: 1;
 }
 
-.burger-content {
+.burger__content {
   z-index: 2;
   background-color: white;
   display: flex;
@@ -41,18 +41,18 @@
   padding-top: 200px;
 }
 
-.burger-element {
+.burger__element {
   margin-top: 28px;
   font-weight: 500;
   font-size: 18px;
   text-align: center;
 }
 
-.burger-element:hover {
+.burger__element:hover {
   text-decoration: underline;
 }
 
-.burger-account {
+.burger__account {
   display: flex;
   position: relative;
   margin: auto;
@@ -73,7 +73,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .burger-content {
+  .burger__content {
     width: 100%;
   }
 }

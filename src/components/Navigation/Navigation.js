@@ -5,13 +5,13 @@ function BurgerMenu(props) {
 
   return (
     <div className={classyName}>
-      <div className="burger-content">
-        <div className="burger-close" onClick={props.onClose} />
-        <a className="burger-element">Главная</a>
-        <a className="burger-element">Фильмы</a>
-        <a className="burger-element">Сохраненные Фильмы</a>
+      <div className="burger__content">
+        <div className="burger__close" onClick={props.onClose} />
+        <a className="burger__element">Главная</a>
+        <a className="burger__element">Фильмы</a>
+        <a className="burger__element">Сохраненные Фильмы</a>
 
-        <div className="burger-account">
+        <div className="burger__account">
           <a className="header__account-name">Аккаунт</a>
           <div className="header__account-pic"></div>
         </div>

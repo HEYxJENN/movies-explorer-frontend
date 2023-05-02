@@ -10,7 +10,7 @@
   background-image: url(../../../images/logo.svg);
   margin: 0px;
   width: 38px;
-  height: 38px;
+  min-height: 38px;
   background-position: center;
   background-repeat: no-repeat;
   margin-top: 71px;
@@ -92,7 +92,7 @@
     width: 51%;
   }
   .registration__input {
-    width: 390px;
+    width: 100%;
   }
 }
 
@@ -101,7 +101,7 @@
     width: 81.25%;
   }
   .registration__input {
-    width: 260px;
+    min-width: 260px;
     height: 27px;
   }
 }

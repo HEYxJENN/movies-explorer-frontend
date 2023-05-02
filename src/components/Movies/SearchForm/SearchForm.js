@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./SearchForm.css";
 
-const onSwitcher = () => {
-  const switcherEl = document.querySelector(".switcher");
-  switcherEl.style.backgroundImage = "url(../../../images/exit.svg);";
-};
+import thumbsoff from "../../../images/switch.svg";
+import thumbsOn from "../../../images/smalltumboff.svg";
 
 function SearchForm(props) {
+  // const [isSwitchedOn, setSwitchedOn] = useState(false);
+  // const onSwitcher = () => {
+  //   setSwitchedOn(!isSwitchedOn);
+  // };
+
   return (
     <section>
       <div className="search-block">
@@ -18,7 +21,15 @@ function SearchForm(props) {
           <button type="submit" className="search-block__find-button" />
         </form>
         <div className="search-block__short-switcher">
-          <button className="search-block__switcher" onClick={onSwitcher}>
+          <button
+            className="search-block__switcher"
+            style={{
+              backgroundImage: `url(${
+                props.isSwitchedOn ? thumbsOn : thumbsoff
+              })`,
+            }}
+            onClick={props.onSwitcher}
+          >
             {" "}
           </button>
           <p>Короткометражки</p>

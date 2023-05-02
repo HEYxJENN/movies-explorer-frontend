@@ -28,6 +28,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [isBurgerOpened, setBurgerOpened] = useState(false);
   const [isInputLocked, setInputLocked] = useState(true);
+  const [isSwitchedOn, setSwitchedOn] = useState(false);
 
   const handleBurgerMenuClick = () => {
     setBurgerOpened(!isBurgerOpened);
@@ -44,31 +45,29 @@ function App() {
     history.push("/signin");
   };
 
-  // не до конца понимаю как вынести header в зависимости от роута
-  // часть классов, которые я заметил не по БЭМ я переименовл, сайт при этом показывает,
-  // что во всех компонентах- все ок, не понимаю почему
-  // function isHeaderVisible() {
-  //   if (
-  //     location.pathname === "/movies" ||
-  //     location.pathname === "/saved-movies"
-  //   ) {
-  //     return true;
-  //   } else return false;
-  // }
+  const onSwitcher = () => {
+    setSwitchedOn(!isSwitchedOn);
+  };
 
   return (
     <div className="body">
-      {/* <Header isHeaderVisible={isHeaderVisible} /> */}
+      {location.pathname === "/movies" ||
+      location.pathname === "/saved-movies" ||
+      location.pathname === "/profile" ? (
+        <Header onBurger={handleBurgerMenuClick} />
+      ) : (
+        " "
+      )}
+
       <main className="page">
         <CurrentUserContext.Provider>
           <Switch>
             <Route path="/movies">
-              <AllMovies onBurger={handleBurgerMenuClick} />
+              <AllMovies onSwitcher={onSwitcher} isSwitchedOn={isSwitchedOn} />
             </Route>
 
             <Route path="/profile">
               <Profile
-                onBurger={handleBurgerMenuClick}
                 onEdit={handleEditClick}
                 onExit={handleExitClick}
                 isLocked={isInputLocked}
@@ -85,7 +84,10 @@ function App() {
 
             <Route path="/saved-movies">
               {/* {loggedIn ? <Redirect to="/" /> : <Redirect to="/reg" />} */}
-              <SavedMovies onBurger={handleBurgerMenuClick} />
+              <SavedMovies
+                onSwitcher={onSwitcher}
+                isSwitchedOn={isSwitchedOn}
+              />
             </Route>
 
             <Route path="/404">
@@ -103,7 +105,14 @@ function App() {
           />
         </CurrentUserContext.Provider>
       </main>
-      {/* <Footer isVisible={isFooterVisible}/> */}
+
+      {location.pathname === "/movies" ||
+      location.pathname === "/saved-movies" ||
+      location.pathname === "/profile" ? (
+        <Footer />
+      ) : (
+        " "
+      )}
     </div>
   );
 }

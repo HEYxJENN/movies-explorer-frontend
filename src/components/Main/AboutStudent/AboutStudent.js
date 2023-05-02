@@ -29,25 +29,43 @@ function AboutStudents() {
 
       <ul className="about-student__portfolio">
         <li className="about-student__portfolio-fill">Портфолио</li>
-        <li
-          href="https://heyxjenn.github.io/russian-travel/#"
-          className="about-student__portfolio-fill"
-        >
-          Статичный сайт
+        <li className="about-student__portfolio-fill">
+          <a
+            className="about-student__portfolio-fill_link"
+            target="_blank"
+            rel="noreferrer"
+            href="https://heyxjenn.github.io/russian-travel/#"
+          >
+            Статичный сайт
+          </a>
           <div className="arrow" />
         </li>
-        <li
-          href="https://github.com/HEYxJENN/how-to-learn"
-          className="about-student__portfolio-fill"
-        >
-          Адаптивный сайт
+
+        {/* <div className="about-student__portfolio-separators" /> */}
+
+        <li className="about-student__portfolio-fill">
+          <a
+            className="about-student__portfolio-fill_link"
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/HEYxJENN/how-to-learn"
+          >
+            Адаптивный сайт
+          </a>
           <div className="arrow" />
         </li>
-        <li
-          href="https://github.com/HEYxJENN/react-mesto-api-full-gha"
-          className="about-student__portfolio-fill"
-        >
-          Одностраничное приложение
+
+        {/* <div className="about-student__portfolio-separators" /> */}
+
+        <li className="about-student__portfolio-fill">
+          <a
+            className="about-student__portfolio-fill_link"
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/HEYxJENN/react-mesto-api-full-gha"
+          >
+            Одностраничное приложение
+          </a>
           <div className="arrow" />
         </li>
       </ul>

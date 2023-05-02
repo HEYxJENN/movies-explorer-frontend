@@ -3,24 +3,24 @@ import "./SavedMovies.css";
 import React from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-// import Movie from "./MoviesCard/MoviesCard";
 import SavedMoviesCardList from "./SavedMoviesCardList/SavedMoviesCardList.js";
 
 import SearchForm from "../Movies/SearchForm/SearchForm";
 
-function Movies(props) {
+function SavedMovies(props) {
   return (
     <section>
-      <Header />
-      <SearchForm />
-      <section>
+      <SearchForm
+        onSwitcher={props.onSwitcher}
+        isSwitchedOn={props.isSwitchedOn}
+      />
+      <section className="movies-block">
         {/* <ul className="movies-elements"> */}
         <SavedMoviesCardList />
         {/* </ul> */}
       </section>
-      <Footer />
     </section>
   );
 }
 
-export default Movies;
+export default SavedMovies;

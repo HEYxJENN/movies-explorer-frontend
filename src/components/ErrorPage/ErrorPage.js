@@ -9,7 +9,9 @@ function ErrorPage(props) {
         <p className="error-page__not-found-under">Страница не найдена</p>
       </div>
       <button type="button" className="error-page__back">
-        <a href="/">Назад</a>
+        <a className="error-page__back" href="/">
+          Назад
+        </a>
       </button>
     </section>
   );

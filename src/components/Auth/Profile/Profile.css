@@ -40,7 +40,7 @@
   border: none;
 }
 
-.registration__already {
+.profile__already {
   margin: 220px auto 0px;
   color: #a0a0a0;
   text-align: center;
@@ -50,6 +50,7 @@
   line-height: 17px;
   letter-spacing: 0em;
 }
+
 .registration__already_exit-red {
   margin-top: 17px;
   color: red;

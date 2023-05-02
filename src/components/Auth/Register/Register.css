@@ -93,6 +93,10 @@
   .registration {
     width: 51%;
   }
+
+  .registration__input {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -100,7 +104,6 @@
     width: 81.25%;
   }
   .registration__input {
-    width: 260px;
     max-height: 27px;
   }
 }

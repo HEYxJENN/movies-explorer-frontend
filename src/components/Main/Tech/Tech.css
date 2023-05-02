@@ -1,6 +1,5 @@
 .tech {
   background: #f5f5f5;
-  height: 625px;
   display: flex;
   flex-direction: column;
   padding: 100px 70px;
@@ -11,9 +10,9 @@
   padding: 0px;
   font-size: 22px;
   font-weight: 400;
-  line-height: 3;
   color: #000000;
   border-bottom: 1px black solid;
+  padding-bottom: 23px;
 }
 
 .tech__middle_block {
@@ -24,6 +23,7 @@
 }
 
 .tech__middle_block-header {
+  margin: 0px;
   max-width: 600px;
   height: 58px;
   font-family: Inter;
@@ -47,6 +47,7 @@
   line-height: 20px;
   letter-spacing: -0.04em;
   text-align: center;
+  margin-top: 26px;
 }
 
 .tech__list {
@@ -55,9 +56,11 @@
   margin: auto;
   width: 690px;
   height: 60px;
+  margin-top: 100px;
 }
 
 .tech__list-item {
+  margin: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,8 +73,9 @@
 
 @media screen and (max-width: 767px) {
   .tech {
-    padding: 14px;
+    padding: 70px 14px;
     height: fit-content;
+    background: white;
   }
 
   .tech__list {
@@ -81,6 +85,7 @@
     width: 180px;
     height: fit-content;
     margin-top: 50px;
+    grid-row-gap: 10px;
   }
 
   .tech__middle_block-header {

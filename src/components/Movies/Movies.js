@@ -11,16 +11,16 @@ import "./Movies.css";
 function Movies(props) {
   return (
     <section>
-      <Header onBurger={props.onBurger} />
-      <SearchForm onSwitcher={props.onSwitcher} />
-      <section>
+      <SearchForm
+        onSwitcher={props.onSwitcher}
+        isSwitchedOn={props.isSwitchedOn}
+      />
+      <section className="movies-block">
         {/* <ul className="movies-elements"> */}
         <MoviesCardList />
         {/* </ul> */}
         <button className="more-films">Ещё</button>
       </section>
-
-      <Footer />
     </section>
   );
 }

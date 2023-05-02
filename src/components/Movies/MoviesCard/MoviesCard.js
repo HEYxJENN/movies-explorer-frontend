@@ -11,9 +11,7 @@ function Movie(props) {
       <div className="movie__info">
         <p className="movie__name">Название</p>
 
-        <div className="movie__duration-box">
-          <p className="movie__duration">10000</p>
-        </div>
+        <p className="movie__duration-box"> 10ч 10м</p>
       </div>
     </li>
   );
