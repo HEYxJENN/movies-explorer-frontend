@@ -98,12 +98,22 @@
     width: 100%;
   }
 }
-
 @media screen and (max-width: 500px) {
   .registration {
     width: 81.25%;
   }
   .registration__input {
-    max-height: 27px;
+    min-width: 260px;
+    height: 27px;
+  }
+
+  .registration__logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .registration__header {
+    margin-left: auto;
+    margin-right: auto;
   }
 }

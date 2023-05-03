@@ -35,7 +35,7 @@ function SearchForm(props) {
           <p>Короткометражки</p>
         </div>
       </div>
-      <div className="search-block__line" />
+      <div className="page__line" />
     </section>
   );
 }

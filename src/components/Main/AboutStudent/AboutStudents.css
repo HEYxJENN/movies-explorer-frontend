@@ -163,7 +163,8 @@
   .about-student {
     height: fit-content;
     padding: 0;
-    padding-left: 14px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .about-student__portfolio-fill {
@@ -183,10 +184,19 @@
 
   .about-student__middle-block-text {
     margin-top: 20px;
+    max-width: 100%;
   }
 
   .about-student__title {
     margin-top: 70px;
+  }
+
+  .about-student__photo {
+    margin: auto;
+  }
+
+  .about-student__github {
+    margin-top: 40px;
   }
 }
 
@@ -194,5 +204,12 @@
   .about-student__photo {
     width: 292px;
     height: 352px;
+  }
+
+  .about-student {
+    height: fit-content;
+    padding: 0;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 }

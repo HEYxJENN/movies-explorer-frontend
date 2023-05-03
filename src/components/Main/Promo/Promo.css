@@ -99,6 +99,8 @@
     background-image: url("../../../images/landingIMG.svg");
     background-position: center;
     background-repeat: no-repeat;
+    margin: auto;
+    margin-top: 140px;
   }
 
   .promo {
@@ -111,6 +113,7 @@
     max-width: 680px;
     text-align: center;
     padding-left: 0px;
+    margin: auto;
   }
 }
 

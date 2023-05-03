@@ -22,7 +22,7 @@
   align-items: center;
 }
 
-.search-block__line {
+.page__line {
   border-bottom: 1px #f9f9f9 solid;
   width: 89%;
   margin: auto;
@@ -69,7 +69,7 @@
   justify-content: space-around;
   align-items: center;
   margin: 0;
-  padding: 0;
+  padding: 0px 30px;
 }
 
 .search-block__switcher {
@@ -90,7 +90,7 @@
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 520px) {
   .search-block {
     display: flex;
     flex-direction: column;

@@ -38,10 +38,13 @@ function AboutStudents() {
           >
             Статичный сайт
           </a>
-          <div className="arrow" />
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/HEYxJENN/react-mesto-api-full-gha"
+            className="arrow"
+          />
         </li>
-
-        {/* <div className="about-student__portfolio-separators" /> */}
 
         <li className="about-student__portfolio-fill">
           <a
@@ -52,10 +55,13 @@ function AboutStudents() {
           >
             Адаптивный сайт
           </a>
-          <div className="arrow" />
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/HEYxJENN/react-mesto-api-full-gha"
+            className="arrow"
+          />
         </li>
-
-        {/* <div className="about-student__portfolio-separators" /> */}
 
         <li className="about-student__portfolio-fill">
           <a
@@ -66,7 +72,12 @@ function AboutStudents() {
           >
             Одностраничное приложение
           </a>
-          <div className="arrow" />
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/HEYxJENN/react-mesto-api-full-gha"
+            className="arrow"
+          />
         </li>
       </ul>
     </div>
