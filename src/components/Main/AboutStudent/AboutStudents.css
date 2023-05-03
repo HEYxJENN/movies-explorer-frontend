@@ -1,0 +1,215 @@
+.about-student {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 110px 70px;
+  padding-bottom: 0px;
+}
+
+.about-student__title {
+  margin: 0px;
+  padding: 0px;
+  font-size: 22px;
+  font-weight: 400;
+  color: #000000;
+  border-bottom: 1px black solid;
+  padding-bottom: 23px;
+}
+
+.about-student__middle {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+  height: fit-content;
+  height: 326px;
+}
+
+.about-student__middle-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.about-student__middle-block-header {
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+  text-align: left;
+}
+
+.about-student__middle-block-text {
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+  max-width: 600px;
+}
+
+.about-student__middle-block-text:first-of-type {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.about-student__github {
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.about-student__photo {
+  width: 270px;
+  height: 327px;
+  background-image: url(../../../images/myPht.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.about-student__portfolio {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 0;
+  height: 300px;
+  background-color: white;
+  margin-top: 101px;
+  padding-bottom: 125px;
+}
+
+.about-student__portfolio-fill {
+  font-family: Inter;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 80px;
+  letter-spacing: -0.04em;
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+  color: black;
+  height: 100%;
+  display: flex;
+  border-bottom: solid 0.5px #e8e8e8;
+  align-items: center;
+}
+
+/* .about-student__portfolio-separators {
+  border-bottom: solid 0.5px;
+  color: #a0a0a0;
+  padding: 20px 10px;
+} */
+
+.about-student__portfolio-fill:first-child {
+  color: #a0a0a0;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.about-student__portfolio-fill:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.about-student__portfolio-fill:link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.about-student__portfolio-fill:nth-child(1),
+.about-student__portfolio-fill:nth-child(4) {
+  border-bottom: none;
+}
+
+.about-student__portfolio-fill_link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.arrow {
+  background-image: url(../../../images/arrowlink.svg);
+  width: 30px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  right: 7%;
+}
+
+@media screen and (max-width: 1279px) {
+  .about-student__middle-block-text {
+    max-width: 364px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-student {
+    height: fit-content;
+    padding: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .about-student__portfolio-fill {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.04em;
+  }
+
+  .about-student__middle {
+    height: fit-content;
+    flex-direction: column-reverse;
+  }
+
+  .about-student__middle-block {
+    margin-top: 40px;
+  }
+
+  .about-student__middle-block-text {
+    margin-top: 20px;
+    max-width: 100%;
+  }
+
+  .about-student__title {
+    margin-top: 70px;
+  }
+
+  .about-student__photo {
+    margin: auto;
+  }
+
+  .about-student__github {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .about-student__photo {
+    width: 292px;
+    height: 352px;
+  }
+
+  .about-student {
+    height: fit-content;
+    padding: 0;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
