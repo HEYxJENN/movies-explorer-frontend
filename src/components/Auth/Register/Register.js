@@ -2,12 +2,32 @@ import React from "react";
 import "./Register.css";
 
 function Register(props) {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [name, setName] = React.useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.onSubmit({ email, name, password });
+  };
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleName = (e) => {
+    setName(e.target.value);
+  };
+
   return (
     <section className="registration">
       <a href="/" className="registration__logo"></a>
       <h2 className="registration__header">Добро пожаловать!</h2>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <fieldset className="registration__form">
           <label>
             <p className="registration__input-header">Email</p>
@@ -20,6 +40,8 @@ function Register(props) {
               required
               minLength="2"
               maxLength="40"
+              onChange={handleEmail}
+              value={email}
             />
             <span className="registration__input-error"></span>
           </label>
@@ -36,6 +58,8 @@ function Register(props) {
               required
               minLength="2"
               maxLength="200"
+              onChange={handlePassword}
+              value={password}
             />
             <span className="registration__input-error"></span>
           </label>
@@ -43,14 +67,16 @@ function Register(props) {
           <label>
             <p className="registration__input-header">Name</p>
             <input
-              type="password"
-              name="password"
-              autoComplete="current-password"
+              type="name"
+              name="name"
+              autoComplete="name"
               //   placeholder="Password"
               className="registration__input"
               required
               minLength="2"
               maxLength="200"
+              onChange={handleName}
+              value={name}
             />
             <span className="registration__input-error"></span>
           </label>

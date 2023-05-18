@@ -46,6 +46,8 @@
   font-weight: 500;
   font-size: 18px;
   text-align: center;
+  text-decoration: none;
+  color: black;
 }
 
 .burger__element:hover {
@@ -63,6 +65,8 @@
   margin: 0;
   padding: 0;
   margin-right: 17px;
+  text-decoration: none;
+  color: black;
 }
 
 .burger__account-pic {

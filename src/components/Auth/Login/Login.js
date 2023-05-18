@@ -2,11 +2,26 @@ import React, { useState } from "react";
 import "./Login.css";
 
 function Login(props) {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.onSubmit({ email, password });
+  };
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
   return (
     <section className="registration">
       <a href="/" className="registration__logo"></a>
       <h2 className="registration__header">Рады видеть!</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <fieldset className="registration__form">
           <label>
             <p className="registration__input-header">Email</p>
@@ -19,6 +34,8 @@ function Login(props) {
               required
               minLength="2"
               maxLength="40"
+              onChange={handleEmail}
+              value={email}
             />
             <span className="registration__input-error"></span>
           </label>
@@ -35,6 +52,8 @@ function Login(props) {
               required
               minLength="2"
               maxLength="200"
+              onChange={handlePassword}
+              value={password}
             />
             <span className="registration__input-error"></span>
           </label>

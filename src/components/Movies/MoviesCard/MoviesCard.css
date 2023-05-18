@@ -12,7 +12,7 @@
   min-height: 21px;
   color: black;
   position: relative;
-  left: 270px;
+  left: 260px;
   top: 30px;
   font-size: 10px;
   border: none;
@@ -24,8 +24,10 @@
 
 .movie__image {
   border-radius: 10px;
-  /* height: 201px; */
+  height: 201px;
+  width: 339px;
 }
+
 .movie__info {
   display: flex;
   justify-content: space-between;
@@ -78,6 +80,11 @@
   .movie {
     width: 300px;
     /* height: 168px; */
+  }
+  .movie__image {
+    border-radius: 10px;
+    height: 190 px;
+    width: 300px;
   }
 
   .movie__save {
