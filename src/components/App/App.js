@@ -30,7 +30,9 @@ function App() {
   const history = useHistory();
   const location = useLocation();
 
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(
+    localStorage.getItem("logged") === "ok" ? true : false
+  );
   const [currentUser, setCurrentUser] = useState(false);
   const [isBurgerOpened, setBurgerOpened] = useState(false);
   const [isInputLocked, setInputLocked] = useState(true);
@@ -40,15 +42,11 @@ function App() {
   React.useEffect(() => {
     let jwt = localStorage.getItem("jwt");
     if (jwt) {
-      // console.log("there is a key");
       jwt = jwt.replace(/["]/g, "");
       AuthX.checkToken(jwt).then((res) => {
         if (res) {
           setLoggedIn(true);
-          setTimeout(() => {
-            // history.push("/saved-movies");
-            // console.log(loggedIn);
-          }, 3000);
+          localStorage.setItem("logged", "ok");
         }
       });
     }
@@ -64,7 +62,7 @@ function App() {
 
   const handleExitClick = () => {
     localStorage.clear();
-    handleLogIn(false);
+    setLoggedIn(false);
     history.push("/");
   };
 
@@ -73,6 +71,12 @@ function App() {
       savedMovies.push({ res });
     });
     console.log(savedMovies);
+  };
+
+  const handleDelete = (id) => {
+    AuthX.removeSavedMovie(id).then((res) => {
+      console.log(res);
+    });
   };
 
   const onSwitcher = () => {
@@ -90,7 +94,6 @@ function App() {
       if (jwt) {
         jwt = `Bearer ${jwt.replace(/["]/g, "")}`;
       }
-      setLoggedIn(true);
       history.push("/movies");
     } catch (err) {
       console.log(err);
@@ -157,6 +160,7 @@ function App() {
                 onSwitcher={onSwitcher}
                 isSwitchedOn={isSwitchedOn}
                 onSave={handleSaveClick}
+                onDel={handleDelete}
               />
             </Route>
 
@@ -167,11 +171,12 @@ function App() {
                 onSwitcher={onSwitcher}
                 isSwitchedOn={isSwitchedOn}
                 onSave={handleSaveClick}
+                onDel={handleDelete}
               />
             </Route>
 
             <Route path="/">
-              <Main />
+              <Main loggedIn={loggedIn} />
             </Route>
 
             <Route path="/404">

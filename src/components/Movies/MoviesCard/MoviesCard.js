@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import "./MoviesCard.css";
 
 function Movie(props) {
-  const [saved, setSaved] = useState(false);
-
-  useEffect(() => {
-    setSaved(false);
-  }, []);
+  const location = useLocation();
+  const [saved, setSaved] = useState(
+    location.pathname === "/movies" ? false : true
+  );
 
   function convertMinutesToHours() {
     let time = props.duration;
@@ -24,7 +25,7 @@ function Movie(props) {
   const handleSave = () => {
     console.log("saved");
     let data = {};
-    let mainUrl = "https://api.nomoreparties.co/beatfilm-movies";
+    let mainUrl = "https://api.nomoreparties.co";
     console.log(props.data);
     data = {
       country: props.data.country,
@@ -32,9 +33,9 @@ function Movie(props) {
       duration: props.data.duration,
       year: props.data.year,
       description: props.data.description,
-      image: `${mainUrl}/${props.data.image.url}`,
+      image: `${mainUrl}${props.data.image.url}`,
       trailerLink: props.data.trailerLink,
-      thumbnail: `${mainUrl}/${props.data.image.previewUrl}`,
+      thumbnail: `${mainUrl}${props.data.image.url}`,
       movieId: props.data.id,
       nameRU: props.data.nameRU,
       nameEN: props.data.nameEN,
@@ -46,6 +47,8 @@ function Movie(props) {
 
   const handleRemove = () => {
     console.log("removed");
+    let id = props.data._id;
+    props.onDel(id);
     setSaved(false);
   };
 
@@ -56,8 +59,8 @@ function Movie(props) {
           Сохранить
         </button>
       ) : (
-        <button className="movie__save" onClick={handleRemove}>
-          #
+        <button className="movie__delete" onClick={handleRemove}>
+          x
         </button>
       )}
       <img

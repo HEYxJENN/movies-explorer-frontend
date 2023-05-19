@@ -9,13 +9,16 @@ function Movies(props) {
   const [allMovies, setAllMovies] = useState([]);
   const [numCards, setNumCards] = useState(12);
   const [visibleMovies, setVisibleMovies] = useState([]);
-  const [areMoviesLoading, setAreMoviesLoading] = useState(false);
+  const [areMoviesLoading, setAreMoviesLoading] = useState(true);
   const [isShortFilm, setIsShortFilm] = useState(false);
 
   useEffect(() => {
+    setAreMoviesLoading(true);
+
     ApiX.getMovies().then((movies) => {
       setAllMovies(movies);
     });
+    setAreMoviesLoading(false);
   }, []);
 
   useEffect(() => {
@@ -41,10 +44,13 @@ function Movies(props) {
   }, []);
 
   useEffect(() => {
+    setAreMoviesLoading(true);
+
     const filteredMovies = isShortFilm
       ? allMovies.filter((movie) => movie.duration >= 40).slice(0, numCards)
       : allMovies.slice(0, numCards);
     setVisibleMovies(filteredMovies);
+    setAreMoviesLoading(false);
   }, [isShortFilm, allMovies, numCards]);
 
   const handleSearch = (keyWord) => {
@@ -90,7 +96,11 @@ function Movies(props) {
       />
       {areMoviesLoading ? <Preloader /> : null}
       <section className="movies-block">
-        <MoviesCardList movies={visibleMovies} onSave={props.onSave} />
+        <MoviesCardList
+          movies={visibleMovies}
+          onSave={props.onSave}
+          onDel={props.onDel}
+        />
         {allMovies.length > numCards &&
           visibleMovies.length < allMovies.length && (
             <button className="more-films" onClick={handleShowMore}>

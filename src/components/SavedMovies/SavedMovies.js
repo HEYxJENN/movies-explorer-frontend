@@ -10,7 +10,7 @@ import SearchForm from "../Movies/SearchForm/SearchForm";
 function SavedMovies(props) {
   const [allMovies, setAllMovies] = useState([]);
   const [visibleMovies, setVisibleMovies] = useState([]);
-  const [areMoviesLoading, setAreMoviesLoading] = useState(false);
+  const [areMoviesLoading, setAreMoviesLoading] = useState(true);
   const [isShortFilm, setIsShortFilm] = useState(false);
 
   React.useEffect(() => {
@@ -19,6 +19,7 @@ function SavedMovies(props) {
       const arr = Object.values(SavedMovies.data);
       console.log(arr);
       setAllMovies(arr);
+      setAreMoviesLoading(false);
     });
   }, []);
 
@@ -66,7 +67,11 @@ function SavedMovies(props) {
       />
       <section className="movies-block">
         {areMoviesLoading ? <Preloader /> : null}
-        <MoviesCardList movies={visibleMovies} onSave={props.onSave} />
+        <MoviesCardList
+          movies={visibleMovies}
+          onSave={props.onSave}
+          onDel={props.onDel}
+        />
       </section>
     </section>
   );

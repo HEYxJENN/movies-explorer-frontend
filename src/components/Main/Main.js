@@ -6,10 +6,10 @@ import Tech from "./Tech/Tech.js";
 import AboutStudent from "./AboutStudent/AboutStudent.js";
 import Footer from "../Footer/Footer";
 
-function Main() {
+function Main(props) {
   return (
     <section className="main">
-      <Promo />
+      <Promo loggedIn={props.loggedIn} />
       <AboutProject />
       <Tech />
       <AboutStudent />

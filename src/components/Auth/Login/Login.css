@@ -68,6 +68,11 @@
   padding: 0px;
 }
 
+.registration__input-error {
+  color: red;
+  font-size: 14px;
+}
+
 .registration__confirm:hover {
   opacity: 0.85;
   cursor: pointer;

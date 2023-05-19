@@ -1,20 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { useFormWithValidation } from "../../../utils/validation";
 import "./Login.css";
 
 function Login(props) {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const { values, handleChange, errors, isValid } = useFormWithValidation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.onSubmit({ email, password });
-  };
-
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
+    props.onSubmit(values);
   };
 
   return (
@@ -29,15 +22,16 @@ function Login(props) {
               type="email"
               name="email"
               autoComplete="email"
-              //   placeholder="Email"
               className="registration__input "
               required
               minLength="2"
               maxLength="40"
-              onChange={handleEmail}
-              value={email}
+              onChange={handleChange}
+              value={values.email || ""}
             />
-            <span className="registration__input-error"></span>
+            {errors.email && (
+              <span className="registration__input-error">{errors.email}</span>
+            )}
           </label>
 
           <label>
@@ -47,21 +41,25 @@ function Login(props) {
               type="password"
               name="password"
               autoComplete="current-password"
-              //   placeholder="Password"
               className="registration__input"
               required
               minLength="2"
               maxLength="200"
-              onChange={handlePassword}
-              value={password}
+              onChange={handleChange}
+              value={values.password || ""}
             />
-            <span className="registration__input-error"></span>
+            {errors.password && (
+              <span className="registration__input-error">
+                {errors.password}
+              </span>
+            )}
           </label>
 
-          <button className="registration__confirm">Войти</button>
+          <button className="registration__confirm" disabled={!isValid}>
+            Войти
+          </button>
 
           <h3 className="registration__already">
-            {" "}
             Еще не зарегистрированы?{" "}
             <a className="registration__already_black" href="/signup">
               Зарегистрироваться

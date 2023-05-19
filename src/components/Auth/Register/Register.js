@@ -1,25 +1,13 @@
 import React from "react";
+import { useFormWithValidation } from "../../../utils/validation";
 import "./Register.css";
 
 function Register(props) {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [name, setName] = React.useState("");
+  const { values, handleChange, errors, isValid } = useFormWithValidation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.onSubmit({ email, name, password });
-  };
-
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleName = (e) => {
-    setName(e.target.value);
+    props.onSubmit(values);
   };
 
   return (
@@ -35,15 +23,14 @@ function Register(props) {
               type="email"
               name="email"
               autoComplete="email"
-              //   placeholder="Email"
-              className="registration__input "
+              className="registration__input"
               required
               minLength="2"
               maxLength="40"
-              onChange={handleEmail}
-              value={email}
+              onChange={handleChange}
+              value={values.email || ""}
             />
-            <span className="registration__input-error"></span>
+            <span className="registration__input-error">{errors.email}</span>
           </label>
 
           <label>
@@ -53,38 +40,37 @@ function Register(props) {
               type="password"
               name="password"
               autoComplete="current-password"
-              //   placeholder="Password"
               className="registration__input"
               required
               minLength="2"
               maxLength="200"
-              onChange={handlePassword}
-              value={password}
+              onChange={handleChange}
+              value={values.password || ""}
             />
-            <span className="registration__input-error"></span>
+            <span className="registration__input-error">{errors.password}</span>
           </label>
 
           <label>
             <p className="registration__input-header">Name</p>
             <input
-              type="name"
+              type="text"
               name="name"
               autoComplete="name"
-              //   placeholder="Password"
               className="registration__input"
               required
               minLength="2"
               maxLength="200"
-              onChange={handleName}
-              value={name}
+              onChange={handleChange}
+              value={values.name || ""}
             />
-            <span className="registration__input-error"></span>
+            <span className="registration__input-error">{errors.name}</span>
           </label>
 
-          <button className="registration__confirm">Зарегистрироваться</button>
+          <button className="registration__confirm" disabled={!isValid}>
+            Зарегистрироваться
+          </button>
 
           <h3 className="registration__already">
-            {" "}
             Уже зарегистрированы?{" "}
             <a href="/signin" className="registration__already_black">
               Войти
