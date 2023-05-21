@@ -4,8 +4,7 @@
 
 ### Дипломный проект на яндекс практикум:
 
-https://heyxjenn.github.io/
-
+http://heymovies.nomoredomains.monster/
 ---
 
 'npm build' for build
