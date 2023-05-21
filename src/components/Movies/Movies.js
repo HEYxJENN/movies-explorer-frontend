@@ -11,6 +11,7 @@ function Movies(props) {
   const [visibleMovies, setVisibleMovies] = useState([]);
   const [areMoviesLoading, setAreMoviesLoading] = useState(true);
   const [isShortFilm, setIsShortFilm] = useState(false);
+  const [noResults, setNoResults] = useState(false);
 
   useEffect(() => {
     setAreMoviesLoading(true);
@@ -72,7 +73,14 @@ function Movies(props) {
       }
       return matched;
     });
-    console.log(matchedList);
+
+    // Проверяем, есть ли результаты поиска
+    if (matchedList.length === 0) {
+      setNoResults(true);
+    } else {
+      setNoResults(false);
+    }
+
     setVisibleMovies(matchedList);
     setAreMoviesLoading(false);
   };
@@ -95,12 +103,17 @@ function Movies(props) {
         onSearch={handleSearch}
       />
       {areMoviesLoading ? <Preloader /> : null}
+
       <section className="movies-block">
-        <MoviesCardList
-          movies={visibleMovies}
-          onSave={props.onSave}
-          onDel={props.onDel}
-        />
+        {noResults ? (
+          <p className="no-results">Ничего не найдено</p>
+        ) : (
+          <MoviesCardList
+            movies={visibleMovies}
+            onSave={props.onSave}
+            onDel={props.onDel}
+          />
+        )}
         {allMovies.length > numCards &&
           visibleMovies.length < allMovies.length && (
             <button className="more-films" onClick={handleShowMore}>
