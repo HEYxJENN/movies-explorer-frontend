@@ -18,6 +18,19 @@
   border: none;
 }
 
+.movie__save_pressed {
+  border-radius: 30px;
+  max-width: 21px;
+  min-height: 21px;
+  color: black;
+  position: relative;
+  left: 300px;
+  top: 30px;
+  font-size: 10px;
+  border: none;
+  background-image: url(../../../images/saved.svg);
+}
+
 .movie:hover .movie__save {
   visibility: visible;
 }

@@ -8,6 +8,7 @@ function Movie(props) {
   const [saved, setSaved] = useState(
     location.pathname === "/movies" ? false : true
   );
+  const [liked, setLiked] = useState(false);
 
   function convertMinutesToHours() {
     let time = props.duration;
@@ -42,7 +43,7 @@ function Movie(props) {
     };
     console.log(data);
     props.onSave(data);
-    setSaved(true);
+    setLiked(true);
   };
 
   const handleRemove = () => {
@@ -55,9 +56,13 @@ function Movie(props) {
   return (
     <li className="movie">
       {!saved ? (
-        <button className="movie__save" onClick={handleSave}>
-          Сохранить
-        </button>
+        !liked ? (
+          <button className="movie__save" onClick={handleSave}>
+            Сохранить
+          </button>
+        ) : (
+          <button className="movie__save_pressed"></button>
+        )
       ) : (
         <button className="movie__delete" onClick={handleRemove}>
           x

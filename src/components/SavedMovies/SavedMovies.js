@@ -1,10 +1,7 @@
-import "./SavedMovies.css";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import MoviesCardList from "../Movies/MoviesCardList/MoviesCardList";
 import Preloader from "../Movies/Preloader/Preloader";
-import React from "react";
 import AuthX from "../../utils/MainApi";
-
 import SearchForm from "../Movies/SearchForm/SearchForm";
 
 function SavedMovies(props) {
@@ -14,13 +11,16 @@ function SavedMovies(props) {
   const [isShortFilm, setIsShortFilm] = useState(false);
 
   React.useEffect(() => {
-    AuthX.getSavedMovies().then((SavedMovies) => {
-      console.log(SavedMovies);
-      const arr = Object.values(SavedMovies.data);
-      console.log(arr);
-      setAllMovies(arr);
-      setAreMoviesLoading(false);
-    });
+    AuthX.getSavedMovies()
+      .then((savedMovies) => {
+        const arr = Object.values(savedMovies.data);
+        setAllMovies(arr);
+        setVisibleMovies(arr);
+        setAreMoviesLoading(false);
+      })
+      .catch((error) => {
+        console.log("Error retrieving saved movies:", error);
+      });
   }, []);
 
   useEffect(() => {
@@ -30,32 +30,36 @@ function SavedMovies(props) {
     setVisibleMovies(filteredMovies);
   }, [isShortFilm, allMovies]);
 
-  const handleSearch = (keyWord) => {
+  const handleSearch = (keyword) => {
     setAreMoviesLoading(true);
-    let matchedList = [];
-    let matched = false;
-    allMovies.filter((movie) => {
-      if (movie.nameRU && movie.nameEN) {
-        matched = (movie.nameRU + movie.nameEN)
-          .toLowerCase()
-          .includes(keyWord.toLowerCase());
-      } else if (movie.nameEN) {
-        matched = movie.nameEN.toLowerCase().includes(keyWord.toLowerCase());
-      } else if (movie.nameRU) {
-        matched = movie.nameRU.toLowerCase().includes(keyWord.toLowerCase());
-      }
-      if (matched) {
-        matchedList.push(movie);
-      }
-      return matched;
+    const matchedList = allMovies.filter((movie) => {
+      const movieName = movie.nameRU ? movie.nameRU.toLowerCase() : "";
+      const movieNameEN = movie.nameEN ? movie.nameEN.toLowerCase() : "";
+      const lowerKeyword = keyword.toLowerCase();
+      return (
+        movieName.includes(lowerKeyword) || movieNameEN.includes(lowerKeyword)
+      );
     });
-    console.log(matchedList);
     setVisibleMovies(matchedList);
     setAreMoviesLoading(false);
   };
 
   const handleSwitcher = (value) => {
     setIsShortFilm(value);
+  };
+
+  const handleRemove = (movieId) => {
+    AuthX.removeSavedMovie(movieId)
+      .then(() => {
+        const updatedMovies = allMovies.filter(
+          (movie) => movie._id !== movieId
+        );
+        setAllMovies(updatedMovies);
+        setVisibleMovies(updatedMovies);
+      })
+      .catch((error) => {
+        console.log("Error deleting movie:", error);
+      });
   };
 
   return (
@@ -70,7 +74,7 @@ function SavedMovies(props) {
         <MoviesCardList
           movies={visibleMovies}
           onSave={props.onSave}
-          onDel={props.onDel}
+          onDel={handleRemove}
         />
       </section>
     </section>

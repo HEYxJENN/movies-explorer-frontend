@@ -75,11 +75,11 @@ function App() {
     console.log(savedMovies);
   };
 
-  const handleDelete = (id) => {
-    AuthX.removeSavedMovie(id).then((res) => {
-      console.log(res);
-    });
-  };
+  // const handleDelete = (id) => {
+  //   AuthX.removeSavedMovie(id).then((res) => {
+  //     console.log(res);
+  //   });
+  // };
 
   const onSwitcher = () => {
     setSwitchedOn(!isSwitchedOn);
@@ -181,7 +181,7 @@ function App() {
                 onSwitcher={onSwitcher}
                 isSwitchedOn={isSwitchedOn}
                 onSave={handleSaveClick}
-                onDel={handleDelete}
+                // onDel={handleDelete}
               />
             </Route>
 
@@ -192,7 +192,7 @@ function App() {
                 onSwitcher={onSwitcher}
                 isSwitchedOn={isSwitchedOn}
                 onSave={handleSaveClick}
-                onDel={handleDelete}
+                // onDel={handleDelete}
               />
             </Route>
 
