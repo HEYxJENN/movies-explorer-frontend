@@ -17,6 +17,16 @@ class Auth extends React.Component {
 
   //Users
 
+  getMe(jwt) {
+    return fetch(`${this._address}/users/me`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: jwt,
+      },
+    }).then(this._getRes);
+  }
+
   register(email, name, password) {
     return fetch(`${this._address}/signup`, {
       method: "POST",

@@ -3,11 +3,13 @@ import "./App.css";
 import React from "react";
 
 import { Route } from "react-router-dom";
-import ProtectedRoute from "../ProtectedRoute";
+import { Link } from "react-router-dom";
+
 import { Switch } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
+import ProtectedRoute from "../ProtectedRoute";
 import ErrorPage from "../ErrorPage/ErrorPage.js";
 import Main from "../Main/Main";
 import Login from "../Auth/Login/Login";
@@ -33,7 +35,9 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(
     localStorage.getItem("logged") === "ok" ? true : false
   );
-  const [currentUser, setCurrentUser] = useState(false);
+  const [currentUser, setCurrentUser] = useState(
+    localStorage.getItem("user") || { name: "", email: "" }
+  );
   const [isBurgerOpened, setBurgerOpened] = useState(false);
   const [isInputLocked, setInputLocked] = useState(true);
   const [isSwitchedOn, setSwitchedOn] = useState(false);
@@ -90,21 +94,39 @@ function App() {
       setLoggedIn(true);
 
       let jwt = localStorage.getItem("jwt");
+      console.log(jwt);
 
       if (jwt) {
         jwt = `Bearer ${jwt.replace(/["]/g, "")}`;
       }
+
+      console.log(jwt);
+
       history.push("/movies");
+
+      AuthX.getMe(jwt)
+        .then((res) => {
+          const name = res.data.name;
+          const email = res.data.email;
+          const data = { name: name, email: email };
+          localStorage.setItem("user", data);
+        })
+        .catch((err) => console.log(err));
     } catch (err) {
       console.log(err);
     }
   }
 
+  // React.useEffect(() => {
+  //   console.log(currentUser);
+  // }, [currentUser]);
+
   function handleRegister({ email, name, password }) {
     AuthX.register(email, name, password)
       .then(() => {
         setTimeout(() => {
-          history.push("/signin");
+          // history.push("/signin");
+          handleLogIn({ email, password });
         }, 1000);
       })
       .catch((err) => {
@@ -179,7 +201,7 @@ function App() {
               <Main loggedIn={loggedIn} />
             </Route>
 
-            <Route path="/404">
+            <Route path="/*">
               <ErrorPage />
             </Route>
           </Switch>

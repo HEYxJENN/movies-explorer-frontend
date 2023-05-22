@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.774a1d71.css",
+    "main.js": "/static/js/main.1d82f4cf.js",
+    "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
+    "static/media/myPht.jpg": "/static/media/myPht.f75259ba489ad6e5adb7.jpg",
+    "static/media/Inter-Medium.woff": "/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
+    "static/media/Inter-Black.woff": "/static/media/Inter-Black.c6938660eec019fefd68.woff",
+    "static/media/Inter-Regular.woff": "/static/media/Inter-Regular.8c206db99195777c6769.woff",
+    "static/media/Inter-Medium.woff2": "/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
+    "static/media/Inter-Black.woff2": "/static/media/Inter-Black.15ca31c0a2a68f76d2d1.woff2",
+    "static/media/Inter-Regular.woff2": "/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
+    "static/media/landingIMG.svg": "/static/media/landingIMG.9ae3076ac2fb2aeb5314.svg",
+    "static/media/logo.svg": "/static/media/logo.dacfa879c5c02581daba.svg",
+    "static/media/find.svg": "/static/media/find.efae13d678aea6eb7747.svg",
+    "index.html": "/index.html",
+    "static/media/search.svg": "/static/media/search.9d65490bd05e8f3d78d3.svg",
+    "static/media/icon__COLOR_icon-main.svg": "/static/media/icon__COLOR_icon-main.a80c98f47813ebb78e81.svg",
+    "static/media/menu.svg": "/static/media/menu.08035af1e508cd8cfed5.svg",
+    "static/media/EXIT.svg": "/static/media/EXIT.7d655a56731c0b846966.svg",
+    "static/media/arrowlink.svg": "/static/media/arrowlink.2f133fb2a9b9c682afa2.svg",
+    "static/media/smalltumboff.svg": "/static/media/smalltumboff.2123b8574895470f32159cf6177aa5c3.svg",
+    "static/media/switch.svg": "/static/media/switch.06824562882e245c55c5085b71120125.svg",
+    "main.774a1d71.css.map": "/static/css/main.774a1d71.css.map",
+    "main.1d82f4cf.js.map": "/static/js/main.1d82f4cf.js.map",
+    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.774a1d71.css",
+    "static/js/main.1d82f4cf.js"
+  ]
+}
