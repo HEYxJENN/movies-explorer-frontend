@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useFormWithValidation } from "../../../utils/validation";
 import "./Register.css";
 
@@ -12,7 +13,7 @@ function Register(props) {
 
   return (
     <section className="registration">
-      <a href="/" className="registration__logo"></a>
+      <Link to="/" className="registration__logo"></Link>
       <h2 className="registration__header">Добро пожаловать!</h2>
 
       <form onSubmit={handleSubmit}>
@@ -72,9 +73,9 @@ function Register(props) {
 
           <h3 className="registration__already">
             Уже зарегистрированы?{" "}
-            <a href="/signin" className="registration__already_black">
+            <Link to="/signin" className="registration__already_black">
               Войти
-            </a>
+            </Link>
           </h3>
         </fieldset>
       </form>

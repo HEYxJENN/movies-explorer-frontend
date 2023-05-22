@@ -35,9 +35,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(
     localStorage.getItem("logged") === "ok" ? true : false
   );
-  const [currentUser, setCurrentUser] = useState(
-    localStorage.getItem("user") || { name: "", email: "" }
-  );
+  const [currentUser, setCurrentUser] = useState({ name: "", email: "" });
   const [isBurgerOpened, setBurgerOpened] = useState(false);
   const [isInputLocked, setInputLocked] = useState(true);
   const [isSwitchedOn, setSwitchedOn] = useState(false);
@@ -110,6 +108,7 @@ function App() {
           const email = res.data.email;
           const data = { name: name, email: email };
           localStorage.setItem("user", data);
+          setCurrentUser({ name: name, email: email });
         })
         .catch((err) => console.log(err));
     } catch (err) {
@@ -117,9 +116,9 @@ function App() {
     }
   }
 
-  // React.useEffect(() => {
-  //   console.log(currentUser);
-  // }, [currentUser]);
+  React.useEffect(() => {
+    console.log(currentUser);
+  }, [currentUser]);
 
   function handleRegister({ email, name, password }) {
     AuthX.register(email, name, password)

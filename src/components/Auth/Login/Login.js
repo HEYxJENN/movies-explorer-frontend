@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { useFormWithValidation } from "../../../utils/validation";
 import "./Login.css";
 
@@ -61,9 +63,9 @@ function Login(props) {
 
           <h3 className="registration__already">
             Еще не зарегистрированы?{" "}
-            <a className="registration__already_black" href="/signup">
+            <Link className="registration__already_black" to="/signup">
               Зарегистрироваться
-            </a>
+            </Link>
           </h3>
         </fieldset>
       </form>

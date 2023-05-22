@@ -1,25 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 function Header(props) {
   return (
     <header className="header">
-      <a href="/" title="Перейти на главную" className="header__logo" />
+      <Link to="/" title="Перейти на главную" className="header__logo" />
 
       <div className="header__films">
-        <a href="/movies" className="header__films-list">
+        <Link to="/movies" className="header__films-list">
           Фильмы
-        </a>
-        <a href="/saved-movies" className="header__savedfilms-list">
+        </Link>
+        <Link to="/saved-movies" className="header__savedfilms-list">
           Сохраненные фильмы
-        </a>
+        </Link>
       </div>
       <div className="header__account">
-        <a href="/profile" className="header__account-name">
+        <Link to="/profile" className="header__account-name">
           Аккаунт
-        </a>
-        <a
-          href="/profile"
+        </Link>
+        <Link
+          to="/profile"
           title="Перейти в профиль"
           className="header__account-pic"
         />
